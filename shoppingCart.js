@@ -72,7 +72,7 @@ function generateCart() {
         let cell5 = row.insertCell(4);
         picSrc = order[i].name.replace(' ', '-').toLowerCase();
         
-        cell1.innerHTML = `<img src="/Images/${picSrc}.jpg" alt="" width="200px">`;
+        cell1.innerHTML = `<img src="/barkingBoxes/Images/${picSrc}.jpg" alt="" width="200px">`;
         cell2.innerHTML = order[i].name;
         cell3.innerHTML = order[i].quantity;
         cell4.innerHTML = order[i].price;
