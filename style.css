@@ -7,6 +7,15 @@ body {
     align-items: center;
     padding: 20px;
     background: #abddd8;
+    animation: nav-load 300ms ease-in;
+}
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 nav {
     flex: 1;
@@ -16,6 +25,23 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+.logo img {
+        animation-name: nav-link-load;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+        transform: scale(0);
+}
+#showCart,
+#menuIcon {
+        animation-name: nav-link-load;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+        transform: scale(0);
 }
 .nav-link {
     display: inline-block;
@@ -30,6 +56,23 @@ nav {
     overflow: hidden;
     transition: color 500ms ease-in-out;
     margin: 0 .5rem;
+    animation-name: nav-link-load;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    transform: scale(0);
+}
+@keyframes nav-link-load {
+    0% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 .nav-link::before {
     content: '';
@@ -85,7 +128,13 @@ hr {
 }
 .container {
     width: 80%;
-    margin: auto;    
+    margin: auto;   
+}
+.container.animation {
+    animation: article-load 300ms ease-in 800ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0; 
 }
 .row {
     display: flex;
@@ -115,6 +164,12 @@ hr {
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
+    border: none;
+}
+.btn.submit {
+    font-size: 1.5rem;
+    display: block;
+    margin: 1rem auto;
 }
 .btn:hover {
     background-color: #ccc;
@@ -124,6 +179,20 @@ hr {
 .small-container {
     max-width: 60%;
     margin: auto;
+    animation: article-load 300ms ease-in 800ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+@keyframes article-load {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 .col-4 {
     flex-basis: 22%;
@@ -469,7 +538,9 @@ input[type=text], input[type=email], textarea {
     }
     .logo img {
         width: 350px;
+        
     }
+    
     #featured {
         max-width: 100%;
     }
